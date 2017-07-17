@@ -1,4 +1,4 @@
-def demo1():
+def listdemo():
     l = [5,4,3,2]
     for x in reversed(l):
         print (x)
@@ -9,8 +9,6 @@ def demo1():
 4
 5
 '''
-
-def demo2():
     l                                                       #[5, 4, 3, 2]
     reversed(l)                                     #<list_reverseiterator object at 0x7f1ebcf83a58>
     list(reversed(l))                             #[2, 3, 4, 5]
@@ -62,3 +60,25 @@ def demo2():
 
     l.remove(6)
     l                                                            #[0, 1, 2, 3, 4, 5, [6, 6, 6], 7, 8, 9, 10, [11, 12, 13, 14, 15], 16, 17, 18, 19, 20]
+
+
+###Loop
+def loopdemo():
+    print("Result of first loop")
+    counter = 0
+    while counter <= 5:
+        print (counter),
+        counter += 1
+    else:
+        print ("loop exited normally")
+    # Here "else" is executed Output: 0 1 2 3 4 5 loop exited normally
+
+    print("Result of second loop")
+    for i in range(5):
+      print (i),
+      if i > 3:
+       break
+    else:
+      print ("loop exited normally")
+    # Here "else" is not executed because "break" happen Output: 0 1 2 3 4
+loops()
