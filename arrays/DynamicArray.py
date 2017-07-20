@@ -63,15 +63,14 @@ class DynamicArray:
 
 
 #Test for DynamicArray
-"""
-arr = DynamicArray()
-arr.append(5)
-arr.append(8)
-arr.append(3)
-arr.insert(1, 6)
-arr.insert(2, 7)
-arr.insert(4, 9)
-arr.remove(3)
-for x in range(len(arr)):
-	print (arr[x])
-"""
+if __name__ == '__main__':
+	arr = DynamicArray()
+	arr.append(5)
+	arr.append(8)
+	arr.append(3)
+	arr.insert(1, 6)
+	arr.insert(2, 7)
+	arr.insert(4, 9)
+	arr.remove(3)
+	for x in range(len(arr)):
+		print (arr[x])
