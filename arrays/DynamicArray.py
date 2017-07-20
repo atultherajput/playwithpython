@@ -59,4 +59,19 @@ class DynamicArray:
 				self._A[self._n - 1] = None 		#help garbage collection
 				self._n -= 1 				#we have one less item
 				return 					#exit immediately
-			raise ValueError('value not found') 		#only reached if no match
+		raise ValueError('value not found') 		#only reached if no match
+
+
+#Test for DynamicArray
+"""
+arr = DynamicArray()
+arr.append(5)
+arr.append(8)
+arr.append(3)
+arr.insert(1, 6)
+arr.insert(2, 7)
+arr.insert(4, 9)
+arr.remove(3)
+for x in range(len(arr)):
+	print (arr[x])
+"""
