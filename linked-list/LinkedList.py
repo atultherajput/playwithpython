@@ -135,33 +135,57 @@ class LinkedList:
 			count += 1
 		temp._next=_Node(self._element,temp._next)
 
+	def erase(self, index):
+		"""Delete element at given index"""
+		self._current = self._head
+		self._index = index
+		count = 0
+		temp = None
+		if self._index == 0:
+			return self.pop_front()
+		elif self._index < 0:
+			return "Negative index are not allowed"
+		while count< self._index:
+			if self._current == None:
+				return "Not Possible"
+			temp = self._current
+			self._current = self._current._next
+			count += 1
+		temp._next= self._current._next
+		self._current =None
+
 
 #Test for Linked List:
 if __name__ == '__main__':
 
 	l = LinkedList()
-	print(l)
-	print(l.size())
-	print(l.is_empty())
+	# print(l)
+	# print(l.size())
+	# print(l.is_empty())
 	l.push_front(4); 	print(l)
-	print(l.value_at(0))
-	print(l.is_empty())
+	#print(l.value_at(0))
+	#print(l.is_empty())
 	l.push_back(6); 	print(l)
-	print(l.is_empty())
-	print(l.back())
-	print(l.size())
+	#print(l.is_empty())
+	#print(l.back())
+	#print(l.size())
 	l.push_front(3); 	print(l)
-	print(l.value_at(2))
-	print(l.pop_back())
+	# print(l.value_at(2))
+	# print(l.pop_back())
+	# print(l)
+	# print(l.pop_front())
+	# print(l)
+	# print(l.pop_back())
+	# print(l)
+	# print(len(l))
+	# print(l.is_empty())
+	# print(l.front())
+	# print(l.value_at(2))
+	# print(l)
+	# print(l.pop_back())
+	# l.insert(0,5); 		print(l)
+	l.push_back(5)
+	l.push_back(8)
 	print(l)
-	print(l.pop_front())
+	l.erase(4)
 	print(l)
-	print(l.pop_back())
-	print(l)
-	print(len(l))
-	print(l.is_empty())
-	print(l.front())
-	print(l.value_at(2))
-	print(l)
-	print(l.pop_back())
-	l.insert(0,5); 		print(l)
