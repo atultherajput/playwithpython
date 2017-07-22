@@ -108,30 +108,60 @@ class LinkedList:
 		else:
 			return self._head._data
 
+	def back(self):
+		"""Return Last Element"""
+		self._current = self._head
+		while self._current:
+			ans = self._current._data
+			self._current = self._current._next
+		return ans
+
+	def insert(self, index, data):
+		"""Insert element at a particular index"""
+		self._current = self._head
+		self._index = index
+		self._element = data
+		count = 0
+		temp = None
+		if self._index == 0:
+			return self.push_front(self._element)
+		elif self._index < 0:
+			return "Negative index are not allowed"
+		while count< self._index:
+			if self._current == None:
+				return "Not Possible"
+			temp = self._current
+			self._current = self._current._next
+			count += 1
+		temp._next=_Node(self._element,temp._next)
 
 
 #Test for Linked List:
-l = LinkedList()
-print(l)
-print(l.size())
-print(l.is_empty())
-l.push_front(4); 	print(l)
-print(l.value_at(0))
-print(l.is_empty())
-l.push_back(5); 	print(l)
-print(l.is_empty())
-print(l.size())
-l.push_front(3); 	print(l)
-print(l.value_at(2))
-print(l.pop_back())
-print(l)
-print(l.pop_front())
-print(l)
-print(l.pop_back())
-print(l)
-print(len(l))
-print(l.is_empty())
-print(l.front())
-print(l.value_at(2))
-print(l)
-print(l.pop_back())
+if __name__ == '__main__':
+
+	l = LinkedList()
+	print(l)
+	print(l.size())
+	print(l.is_empty())
+	l.push_front(4); 	print(l)
+	print(l.value_at(0))
+	print(l.is_empty())
+	l.push_back(6); 	print(l)
+	print(l.is_empty())
+	print(l.back())
+	print(l.size())
+	l.push_front(3); 	print(l)
+	print(l.value_at(2))
+	print(l.pop_back())
+	print(l)
+	print(l.pop_front())
+	print(l)
+	print(l.pop_back())
+	print(l)
+	print(len(l))
+	print(l.is_empty())
+	print(l.front())
+	print(l.value_at(2))
+	print(l)
+	print(l.pop_back())
+	l.insert(0,5); 		print(l)
