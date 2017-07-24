@@ -28,8 +28,12 @@ def URLify(string, length=0):
 
 	#And this also works:-
 
-	for x in range(length,len(arr)):
-		arr.pop() #del arr[x:]
+	# for x in range(length,len(arr)):
+	# 	arr.pop() #del arr[x:]
+
+	#And this also:-
+
+	del arr[length:]
 
 	for x in arr:
 		new_string = new_string+ ''.join(x)
