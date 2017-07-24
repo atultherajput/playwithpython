@@ -76,7 +76,7 @@ class LinkedList:
 			self._previous = self._current
 			self._current = self._current._next
 		if self.is_empty():
-			return self.push_front(data) #Check This
+			return self.push_front(data)
 		self._previous._next = _Node(data)
 		self._size +=1
 
@@ -134,6 +134,7 @@ class LinkedList:
 			self._current = self._current._next
 			count += 1
 		temp._next=_Node(self._element,temp._next)
+		self._size += 1
 
 	def erase(self, index):
 		"""Delete element at given index"""
@@ -151,8 +152,28 @@ class LinkedList:
 			temp = self._current
 			self._current = self._current._next
 			count += 1
-		temp._next= self._current._next
-		self._current =None
+		try:
+			temp._next= self._current._next
+			self._current =None
+			self._size -= 1
+		except AttributeError:
+			print("Index is greater than length of list")
+
+	def value_n_from_end(self, n):
+		"""Get value of nth element starting from end"""
+		self.n=n
+		self.n = int(self.__len__() - self.n -1)
+		return self.value_at(self.n)
+
+	def remove_value(self, value):
+		self._value = value
+		self._current = self._head
+		count = 0
+		while self._current is not None:
+			if self._current._data==self._value:
+				self.erase(count)
+			self._current = self._current._next
+			count += 1
 
 
 #Test for Linked List:
@@ -183,9 +204,10 @@ if __name__ == '__main__':
 	# print(l.value_at(2))
 	# print(l)
 	# print(l.pop_back())
-	# l.insert(0,5); 		print(l)
-	l.push_back(5)
-	l.push_back(8)
-	print(l)
-	l.erase(4)
+	l.insert(0,5); 		print(l)
+	# print(l)
+	# l.erase(2)
+	# print(l)
+	#print(l.value_n_from_end(2))
+	l.remove_value(3)
 	print(l)
