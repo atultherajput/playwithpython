@@ -172,6 +172,7 @@ class LinkedList:
 		while self._current is not None:
 			if self._current._data==self._value:
 				self.erase(count)
+				break
 			self._current = self._current._next
 			count += 1
 
@@ -209,5 +210,5 @@ if __name__ == '__main__':
 	# l.erase(2)
 	# print(l)
 	#print(l.value_n_from_end(2))
-	l.remove_value(3)
+	l.remove_value(4)
 	print(l)
