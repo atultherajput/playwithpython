@@ -21,10 +21,16 @@ def URLify(string, length=0):
 
 	#Another way if we have length of true string. Then we can do following:-
 
-	count = length
-	for x in arr[length:len(arr)]:
-		del arr[length]
-		count += 1
+	# count = length
+	# for x in arr[length:len(arr)]:
+	# 	del arr[length]
+	# 	count += 1
+
+	#And this also works:-
+
+	for x in range(length,len(arr)):
+		arr.pop()
+
 	for x in arr:
 		new_string = new_string+ ''.join(x)
 	print("Orginal String: "+"'"+ string+ "'")
