@@ -166,6 +166,7 @@ class LinkedList:
 		return self.value_at(self.n)
 
 	def remove_value(self, value):
+		"""Delete the first value that it finds."""
 		self._value = value
 		self._current = self._head
 		count = 0
@@ -176,39 +177,57 @@ class LinkedList:
 			self._current = self._current._next
 			count += 1
 
+	def reverse(self):
+		"""Reverse Linked List"""
+		self._previous = None
+		self._current = self._head
+		while(self._current is not None):
+			next = self._current._next
+			self._current._next = self._previous
+			self._previous = self._current
+			self._current = next
+		self._head = self._previous
+
+
 
 #Test for Linked List:
 if __name__ == '__main__':
 
 	l = LinkedList()
-	# print(l)
-	# print(l.size())
-	# print(l.is_empty())
+	print(l)
+	print(l.size())
+	print(l.is_empty())
 	l.push_front(4); 	print(l)
-	#print(l.value_at(0))
-	#print(l.is_empty())
+	print(l.value_at(0))
+	print(l.is_empty())
 	l.push_back(6); 	print(l)
-	#print(l.is_empty())
-	#print(l.back())
-	#print(l.size())
+	print(l.is_empty())
+	print(l.back())
+	print(l.size())
 	l.push_front(3); 	print(l)
-	# print(l.value_at(2))
-	# print(l.pop_back())
-	# print(l)
-	# print(l.pop_front())
-	# print(l)
-	# print(l.pop_back())
-	# print(l)
-	# print(len(l))
-	# print(l.is_empty())
-	# print(l.front())
-	# print(l.value_at(2))
-	# print(l)
-	# print(l.pop_back())
+	print(l.value_at(2))
+	print(l.pop_back())
+	print(l)
+	print(l.pop_front())
+	print(l)
+	print(l.pop_back())
+	print(l)
+	print(len(l))
+	print(l.is_empty())
+	print(l.front())
+	print(l.value_at(2))
+	print(l)
+	print(l.pop_back())
 	l.insert(0,5); 		print(l)
-	# print(l)
-	# l.erase(2)
-	# print(l)
-	#print(l.value_n_from_end(2))
+	print(l)
+	l.erase(2)
+	print(l)
+	print(l.value_n_from_end(2))
 	l.remove_value(4)
+	print(l)
+	l.push_back(8)
+	print(l)
+	l.push_back(9)
+	print(l)
+	l.reverse()
 	print(l)
