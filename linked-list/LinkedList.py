@@ -201,7 +201,6 @@ if __name__ == '__main__':
 	print(l.value_at(0))
 	print(l.is_empty())
 	l.push_back(6); 	print(l)
-	print(l.is_empty())
 	print(l.back())
 	print(l.size())
 	l.push_front(3); 	print(l)
