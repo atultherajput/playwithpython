@@ -17,7 +17,7 @@ def OneAway(string1, string2):
 	return False
 
 
-print(OneAway('pale', 'ple'))
-print(OneAway('pales', 'pale'))
-print(OneAway('pale', 'bale'))
-print(OneAway('pale', 'bake'))
+print(OneAway('pale', 'ple')) 	#True
+print(OneAway('pales', 'pale'))	#True
+print(OneAway('pale', 'bale'))	#True
+print(OneAway('pale', 'bake'))	#False

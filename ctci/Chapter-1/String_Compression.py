@@ -13,4 +13,4 @@ def StringCompression(string):
 		count = 1
 	print(new_string)
 
-StringCompression("aabcccccaaa")
+StringCompression("aabcccccaaa") 	#Output: a2b1c5a3
